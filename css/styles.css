@@ -92,3 +92,57 @@ bas hashi rah ysir instantly, mshen ykun fi animation, b3ml transition */
         font-size: 1.5rem;
     }
 }
+
+/* Badges */
+
+/* hon bst3ml principle of object oriented css,
+lama ykun 3ndi shaghle btiji b kaza form, msln:
+3ndi badges bt5tlf alwen l background wl text, so
+bst3ml hal principle mshen classification */
+
+/* this principle separates structure from the skin */
+
+/* structure */
+.badge {
+    border-radius: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    white-space: nowrap;
+    /* ekhr property mhime lama ykun 3ndi limited space, 
+    bdi ad ma kabbir mu7tawa l badge, imna3o mn ino 
+    ynzal 3a satr jdid */
+}
+
+/* skin 
+note: bst3ml BEM naming convention
+ntibih kif l name convention:
+To separate block from modifier we use –-
+To separate block from element we use __
+*/
+.badge--primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.badge--secondary {
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+/* note 3na nfs badges bas l 7ajm bytghatar, so bdi a3ml
+classes mn ajl l font-size
+ */
+.badge--small {
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge {
+        font-size: 1.5rem;
+    }
+
+    .badge--small {
+        font-size: 1.2rem;
+    }
+}
