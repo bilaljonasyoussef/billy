@@ -6,6 +6,8 @@
     --color-body:#918ca4;
 }
 
+/* Typography */
+
 html {
     font-size: 62.5%;
 }
@@ -54,5 +56,39 @@ p {
 
     h3 {
         font-size: 2.4rem;
+    }
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    /* haydi mawjude b kl l links, so mchn ma iktb zet satr b kl class, bktbo hon */
+}
+
+.link-arrow {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.link-arrow::after {
+    content: '-->';
+    margin-left: 5px;
+    transition: margin 0.15s;
+}
+/* when we hover on the link, bdna l arrow move to the right */
+
+/* hon we want to the hover state and target the after element */
+/* fini iktb inu when hover, l margin-left ysir 10px,
+bas hashi rah ysir instantly, mshen ykun fi animation, b3ml transition */
+.link-arrow:hover::after {
+    margin-left: 10px;
+}
+
+/* bla7iz inu bl standard form, font-size byizghar */
+@media screen and (min-width: 1024px) {
+    .link-arrow {
+        font-size: 1.5rem;
     }
 }
