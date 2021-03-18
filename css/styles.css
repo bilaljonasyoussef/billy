@@ -185,3 +185,35 @@ add padding lal item */
     padding-left: 0;
   }
 }
+
+/* Icons */
+
+/* mn ajl l optimization, use svg sprite generator */
+/* rje3 7dar l video 3n icons mchn tfhm cz complicated */
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.icon--primary {
+  fill: var(--color-primary);
+}
+
+/* hl2 mn ajl 5alli l icon ybayin inu
+fi wara circle mlawan, b7to b container w bl3ab b properties */
+.icon-container {
+  /* ntibih 3a tasmiye,
+    ben klmt icon w container, 
+    fi - w msh --
+    hed l2n we are only separating two words,
+    hon ma fi object oriented css
+    (hayda new class w mch variation la icon class) */
+  align-items: center;
+  background: #f3f9fa;
+  border-radius: 100%;
+  display: inline-flex;
+  height: 64px;
+  justify-content: center;
+  width: 64px;
+}
