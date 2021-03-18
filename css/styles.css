@@ -1,81 +1,83 @@
 :root {
-    --color-primary:#2584ff;
-    --color-secondary:#00d9ff;
-    --color-accent:#ff3400;
-    --color-headings:#1b0760;
-    --color-body:#918ca4;
+  --color-primary: #2584ff;
+  --color-secondary: #00d9ff;
+  --color-accent: #ff3400;
+  --color-headings: #1b0760;
+  --color-body: #918ca4;
 }
 
 /* Typography */
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-    /* he y3ni 1.5*times the current font-size */
-    font-size: 2.4rem;
-    color: var(--color-body);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  /* he y3ni 1.5*times the current font-size */
+  font-size: 2.4rem;
+  color: var(--color-body);
 }
 
-h1,h2,h3 {
-    color: var(--color-headings);
-    margin-bottom: 1rem;
+h1,
+h2,
+h3 {
+  color: var(--color-headings);
+  margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: 7rem;
+  font-size: 7rem;
 }
 
 h2 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 h3 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 p {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 @media screen and (min-width: 1024px) {
-    body {
-        font-size: 1.8rem;
-    }
+  body {
+    font-size: 1.8rem;
+  }
 
-    h1 {
-        font-size: 8rem;
-    }
+  h1 {
+    font-size: 8rem;
+  }
 
-    h2 {
-        font-size: 4rem;
-    }
+  h2 {
+    font-size: 4rem;
+  }
 
-    h3 {
-        font-size: 2.4rem;
-    }
+  h3 {
+    font-size: 2.4rem;
+  }
 }
 
 /* Links */
 a {
-    text-decoration: none;
-    /* haydi mawjude b kl l links, so mchn ma iktb zet satr b kl class, bktbo hon */
+  text-decoration: none;
+  /* haydi mawjude b kl l links, so mchn ma iktb zet satr b kl class, bktbo hon */
 }
 
 .link-arrow {
-    color: var(--color-accent);
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: bold;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .link-arrow::after {
-    content: '-->';
-    margin-left: 5px;
-    transition: margin 0.15s;
+  content: "-->";
+  margin-left: 5px;
+  transition: margin 0.15s;
 }
 /* when we hover on the link, bdna l arrow move to the right */
 
@@ -83,14 +85,14 @@ a {
 /* fini iktb inu when hover, l margin-left ysir 10px,
 bas hashi rah ysir instantly, mshen ykun fi animation, b3ml transition */
 .link-arrow:hover::after {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 /* bla7iz inu bl standard form, font-size byizghar */
 @media screen and (min-width: 1024px) {
-    .link-arrow {
-        font-size: 1.5rem;
-    }
+  .link-arrow {
+    font-size: 1.5rem;
+  }
 }
 
 /* Badges */
@@ -104,12 +106,12 @@ bst3ml hal principle mshen classification */
 
 /* structure */
 .badge {
-    border-radius: 20px;
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 0.5rem 2rem;
-    white-space: nowrap;
-    /* ekhr property mhime lama ykun 3ndi limited space, 
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+  /* ekhr property mhime lama ykun 3ndi limited space, 
     bdi ad ma kabbir mu7tawa l badge, imna3o mn ino 
     ynzal 3a satr jdid */
 }
@@ -121,28 +123,65 @@ To separate block from modifier we use –-
 To separate block from element we use __
 */
 .badge--primary {
-    background: var(--color-primary);
-    color: #fff;
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .badge--secondary {
-    background: var(--color-secondary);
-    color: #fff;
+  background: var(--color-secondary);
+  color: #fff;
 }
 
 /* note 3na nfs badges bas l 7ajm bytghatar, so bdi a3ml
 classes mn ajl l font-size
  */
 .badge--small {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 @media screen and (min-width: 1024px) {
-    .badge {
-        font-size: 1.5rem;
-    }
+  .badge {
+    font-size: 1.5rem;
+  }
 
-    .badge--small {
-        font-size: 1.2rem;
-    }
+  .badge--small {
+    font-size: 1.2rem;
+  }
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-headings);
+}
+
+/* here we use object oriented css */
+
+/* note: bdi kl element bl inline list ykun display te3a 
+inline, badal ma iktb .list--inline li {}, l afdal a3ti 
+kl element a class*/
+.list--inline .list__item {
+  display: inline;
+  margin-right: 2rem;
+}
+
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  /* la 7addit hon ble2i inu ma bayyan 3ndi ticks,
+  lezm add left padding to our list */
+  padding-left: 3rem;
+}
+
+/* ble2i inu item mlaza2 ktir bl tick, so lezm
+add padding lal item */
+.list--tick .list__item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
+    padding-left: 0;
+  }
 }
