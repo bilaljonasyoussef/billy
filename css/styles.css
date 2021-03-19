@@ -4,6 +4,8 @@
   --color-accent: #ff3400;
   --color-headings: #1b0760;
   --color-body: #918ca4;
+  --color-border: #ccc;
+  --border-radius: 30px;
 }
 
 *,
@@ -294,6 +296,61 @@ w ba3den mnsir n5l2 classes jded lal skins */
 
 @media screen and (min-width: 1024px) {
   .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* Inputs */
+
+.input {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  color: var(--color-headings);
+  font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 3.5rem;
+}
+
+/* placeholder by default bikun 3ndo lon,
+bghayro 3a kaydi. Also input bikun 3ndo
+font-size by default, bghayro mtl ma binesbni */
+
+::placeholder {
+  color: #cdcbd7;
+}
+
+.input-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: flex;
+}
+
+/* mhim:
+nhna bdna nshil border te3 input, l2n group-input 3ndo border,
+badal ma nruh 3a .input rule w nshil l border,
+badal ma nshil border la kiil inputs,
+mnshil border te3 l input lammma ykun b group-input,
+so mnst3ml hk rule:
+.input-group .input {}
+nfs shi krmel button li b2alb l input-group,
+ze3jitni l margin yalli faw2o, w bdi zid margin 3a yamino,
+asesan ana m7adad bl .btn inu l margin ykun 10px,
+badal ma ruh w ghayir honik, bghayr bl button lb2alb l
+input-group, so bktb hk rule:
+.input-group .btn {} */
+
+.input-group .input {
+  border: 0;
+  flex-grow: 1;
+  padding: 1.5rem 1rem;
+}
+
+.input-group .btn {
+  margin: 4px;
+}
+
+@media screen and (min-width: 1024px) {
+  .input {
     font-size: 1.5rem;
   }
 }
