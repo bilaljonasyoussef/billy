@@ -4,6 +4,7 @@
   --color-accent: #ff3400;
   --color-headings: #1b0760;
   --color-body: #918ca4;
+  --color-body-darker: #5c5577;
   --color-border: #ccc;
   --border-radius: 30px;
 }
@@ -205,8 +206,17 @@ add padding lal item */
   height: 40px;
 }
 
+.icon--small {
+  width: 30px;
+  height: 30px;
+}
+
 .icon--primary {
   fill: var(--color-primary);
+}
+
+.icon--white {
+  fill: #fff;
 }
 
 /* hl2 mn ajl 5alli l icon ybayin inu
@@ -225,6 +235,10 @@ fi wara circle mlawan, b7to b container w bl3ab b properties */
   height: 64px;
   justify-content: center;
   width: 64px;
+}
+
+.icon-container--accent {
+  background: var(--color-accent);
 }
 
 /* Buttons */
@@ -289,6 +303,11 @@ w ba3den mnsir n5l2 classes jded lal skins */
 }
 
 /* hl2 bdna nshtghl 3ala block buttons skin */
+
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
 
 .btn--block {
   width: 100%;
@@ -444,5 +463,195 @@ input-group, so bktb hk rule:
 
   .plan__description {
     font-size: 1.7rem;
+  }
+}
+
+/* Media */
+.media {
+  display: flex;
+}
+
+.media__title {
+  margin-top: 0;
+}
+
+.media__body {
+  margin: 0 2rem;
+}
+
+.media__image {
+  margin-top: 1rem;
+}
+
+/* Quotes */
+
+/* ntibih inu l font bl quote li 3na yha,
+darker,akbar w Italic */
+.quote {
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--color-body-darker);
+  /* ta3 n3arrif hal color b variable,
+  as a darker color of our body text color */
+  line-height: 1.3;
+}
+
+.quote__text::before {
+  content: open-quote;
+}
+
+.quote__text::after {
+  content: close-quote;
+}
+
+/* note mhime,
+mn ajl n3ml design lal name te3 l author,
+ba3d ma st3malna media mn ajl nktb
+ismo w ism l company ma3 l line image,
+fina nktb hk rule:
+.quote .media__title {}
+ma fiha shi ghalat,
+bas it is recommended to add additional class
+to the element which has .media__title,
+mshen balki yom mnl eyem 8yarna ra2ina
+w ktabna l name mn 8er ma nst3ml media component,
+hek ma bisir 3na ghalat bl code
+so mnzid additional class mnsamiha msln
+quote__author
+*/
+
+.quote__author {
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 0;
+}
+
+.quote__organization {
+  color: var(--color-headings);
+  opacity: 0.4;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+/* tari2a mn l toro2 mn ajl n3alli l line la fo2,
+inu nst3ml relative positioning */
+.quote__line {
+  position: relative;
+  bottom: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .quote {
+    font-size: 2rem;
+  }
+
+  .quote__author {
+    font-size: 2.4rem;
+  }
+
+  .quote__organization {
+    font-size: 1.6rem;
+  }
+}
+/* Grids */
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* note: unit fr tfeja2t fiha inu lma2sad inu
+b2som available space 3ala 3adad l fr w bsir bwazi3 */
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* testimonials */
+
+/* note:
+lama 7tet ykun 3ndi grid of 2 columns,
+image ma3 div, l2et inu fi m7al m3ayan,
+ma kent e5de l image ns lsaf7a, y3ni ma ken
+3m ysir l twzi3 b tasewi, so b5alli l image tkun
+responsive, y3ni badal ma te5d fix size, b3mla responsive:
+.testimonial__image {
+  width: 100%;
+}*/
+
+.testimonial {
+  padding: 3rem;
+}
+
+.testimonial__image {
+  position: relative;
+}
+
+/* note: hon st3malna direct child selector */
+.testimonial__image > img {
+  width: 100%;
+}
+
+.testimonial__image > .icon-container {
+  position: absolute;
+  top: 3rem;
+  right: -32px;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .quote,
+  .testimonial .quote__author {
+    font-size: 2.4rem;
+  }
+
+  .testimonial .quote {
+    margin-left: 6rem;
+  }
+}
+
+/* Callouts */
+.callout {
+  padding: 4rem;
+  border-radius: 5px;
+}
+
+.callout--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.callout__heading {
+  color: #fff;
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.callout .btn {
+  justify-self: center;
+  align-self: center;
+}
+
+.callout__content {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .callout .grid--1x2 {
+    grid-template-columns: 1fr auto;
+  }
+
+  .callout__content {
+    text-align: left;
+  }
+
+  .callout .btn {
+    justify-self: start;
+    margin: 0 2rem;
   }
 }
