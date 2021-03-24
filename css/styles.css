@@ -655,3 +655,139 @@ responsive, y3ni badal ma te5d fix size, b3mla responsive:
     margin: 0 2rem;
   }
 }
+/* Collapsibles */
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* note mhime: 
+5atar b beli,inu badal ma a3ti class
+lal h2, bktb hk rule:
+.collapsible__header h2 {}
+bass tl3 inu balki bl mst2bl 5atar
+3abeli 8ayir badal h2 iktb h3, se3ta
+rah idtar il7a2a 3l stylesheet ta ghayra,
+so hon b7ot class lal h2, (b2sd lal element li bi3abir 3n
+l heading), w se3ta shu ma ken no3 l heading ma btfr2*/
+.collapsible__heading {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+/* leh 3tet additional class la hal chevron icon?
+l2n tan2ul 3ndi kaza icon b hal collapsible class,
+se3ta bsir lama if2os 3a hal icon,
+iza ketb inu .collapsible icon {},
+se3ta it will be applied to all icon
+elements in this class, w ana ma bdi hashi. */
+.collapsible__chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content {
+  /* abl ma nktb hal satren li ta7t, kna mst3mlin property
+  isma display, shra7na inu leh sta8nayna 3ana bisabab
+  bdna nzid animation */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  /* transition: max-height 0.3s;
+  badal hal satr, mn2ul inu bdi klchi yn3amalo
+  animation, mchen ybayn l far2 */
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+  transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+  /* display: block; */
+}
+
+/* tari2a mhime mchen n5alli l icon rotate and content
+yzhar, lama nf2os 3l icon : 
+bzid class isma collapsible--expanded,
+lama ykun 3ndi hal class,b3ml rotation w b8ayr b display,
+hl2 kif bdi 5alli kil ma if2os 3a icon,
+ynzed hal class w ynshel?
+hashi can be done using javascript*/
+
+/* note:
+mn ajl i5fi w izhor l content,
+ma fini ist3ml animation,
+y3ni ma fini iji iktob hk: 
+transition: display .3s; 
+ma byi7sal shi iza hek ktabt.
+so instead of using display property,
+bst3ml property isma max-height
+lech msh height? bi2ilna yha ba3d shwey.
+note: with max-height: 0; bisir 3na overflow
+so the content rah ydal mbayan bi 8ad nazar 3n l state.
+so in order to hide the content, mn2ul overflow: hidden;
+hed shi trick, y3ni badal ma nst3ml display,
+mnst3ml max-height ma3 overflow properties.
+*/
+/* Blocks */
+.block {
+  /* mn ajl fi 7al 8yarna padding te3 block,
+  mchen ma ninsa n8ayr l padding in
+  skewed blocks */
+  --padding-vertical: 6rem;
+  padding: var(--padding-vertical) 2rem;
+  /* text-align: center;
+  mn abl ma n5l2 class block__header,
+  kna 3amlin hal property la kl l block,
+  hashi ghalat, bcz bdna only l header tkun b ns
+  l page */
+}
+
+.block__header {
+  text-align: center;
+}
+
+.block__heading {
+  margin-top: 0;
+}
+
+/* as we have 2 types of blocks,
+wehd dark w wehd abyad, so 3na
+variation lal class block,
+so lezm nst3ml skins */
+
+.block--dark {
+  background: #000;
+  color: #7b858b;
+}
+
+.block--dark .block__heading {
+  color: #fff;
+}
+
+/* hl2 kif bdna n5alli hal block
+ma2sus mtl ma mawjud b design (asdi shakl traoezoid) ? 
+recommended solution to use clip-pat
+to do this we need clip path generator*/
+
+.block--skewed-right {
+  /* ba3d ma n2ass, bdna l kitebe tiji b ns,
+  so zdna padding */
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+}
+
+.block--skewed-left {
+  /* ba3d ma n2ass, bdna l kitebe tiji b ns,
+  so zdna padding */
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
