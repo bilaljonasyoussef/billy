@@ -34,6 +34,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 h1 {
@@ -732,6 +733,7 @@ so in order to hide the content, mn2ul overflow: hidden;
 hed shi trick, y3ni badal ma nst3ml display,
 mnst3ml max-height ma3 overflow properties.
 */
+
 /* Blocks */
 .block {
   /* mn ajl fi 7al 8yarna padding te3 block,
@@ -863,5 +865,40 @@ y3ni 3m 2akkid inu 3ndi l tnen classes*/
 
   .nav__item {
     border: 0;
+  }
+}
+
+/* Hero */
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+/* note krmel rule li fo2
+bra2yi l afdal, kawno he l property mawjude b
+block--skewed-left,
+l afdal inu n3ml overwriting la hal property bi m7allla,
+y3ni n2ul lama nkun bl hero, lamma ykun left,bla bla..
+bs hon 2allna inu block class is more generic,
+y3ni l hero class is more specific,
+so 3imil t3dil 3ala hal property b2alb l hero class*/
+
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 0;
+  }
+
+  .hero__content {
+    text-align: left;
+    align-self: center;
   }
 }
