@@ -261,6 +261,14 @@ w ba3den mnsir n5l2 classes jded lal skins */
   white-space: nowrap;
 }
 
+/* 3m n2ul iza ken fi button b2albo icon,bdna yeh bla bla */
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
 /* hl2 blashna b skin */
 
 .btn--primary {
@@ -333,7 +341,7 @@ w ba3den mnsir n5l2 classes jded lal skins */
 }
 
 /* placeholder by default bikun 3ndo lon,
-bghayro 3a kaydi. Also input bikun 3ndo
+bghayro 3a kayfi. Also input bikun 3ndo
 font-size by default, bghayro mtl ma binesbni */
 
 ::placeholder {
@@ -363,7 +371,7 @@ input-group, so bktb hk rule:
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 
 .input-group .btn {
@@ -793,6 +801,7 @@ to do this we need clip path generator*/
   max-width: 1140px;
   margin: 0 auto;
 }
+
 /* Navigation Bar */
 .nav {
   background: #000;
@@ -900,5 +909,30 @@ so 3imil t3dil 3ala hal property b2alb l hero class*/
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+/* Domain Block */
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
 }
