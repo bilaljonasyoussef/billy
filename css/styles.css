@@ -789,6 +789,7 @@ mnst3ml max-height ma3 overflow properties.
 
 .block__header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .block__heading {
