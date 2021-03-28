@@ -17,6 +17,11 @@
 
 /* Typography */
 
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+/* used to specify the color of the selected text */
 html {
   font-size: 62.5%;
 }
@@ -47,6 +52,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -164,7 +170,6 @@ classes mn ajl l font-size
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-headings);
 }
 
 /* here we use object oriented css */
@@ -182,6 +187,7 @@ kl element a class*/
   /* la 7addit hon ble2i inu ma bayyan 3ndi ticks,
   lezm add left padding to our list */
   padding-left: 3rem;
+  color: var(--color-headings);
 }
 
 /* ble2i inu item mlaza2 ktir bl tick, so lezm
@@ -502,6 +508,7 @@ input-group, so bktb hk rule:
 /* Media */
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -798,7 +805,13 @@ so lezm nst3ml skins */
   color: #7b858b;
 }
 
-.block--dark .block__heading {
+/* .block--dark .block__heading {
+  color: #fff;
+} */
+
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: #fff;
 }
 
@@ -811,14 +824,14 @@ to do this we need clip path generator*/
   /* ba3d ma n2ass, bdna l kitebe tiji b ns,
   so zdna padding */
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 .block--skewed-left {
   /* ba3d ma n2ass, bdna l kitebe tiji b ns,
   so zdna padding */
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .container {
@@ -902,9 +915,7 @@ y3ni 3m 2akkid inu 3ndi l tnen classes*/
 }
 
 /* Hero */
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
+
 /* note krmel rule li fo2
 bra2yi l afdal, kawno he l property mawjude b
 block--skewed-left,
@@ -1006,5 +1017,26 @@ hayda 7alli ana:
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
+  }
+}
+
+/* Showcase Block */
+
+.block-showcase__image > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+
+  .block-showcase__image {
+    justify-self: end;
+  }
+
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
   }
 }
